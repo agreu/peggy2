@@ -179,6 +179,24 @@ void SeqMessage(int count) {
   }
 }
 
+void SeqTest (int count){
+uint32_t * ptr_dst;
+  while (count > 0) {
+
+  
+  ptr_dst = (uint32_t *)screen.buffer;
+  for(int y=0; y<25; y++){
+    *ptr_dst = 0xffffffff;
+    ptr_dst++;
+  }
+
+  // Update l'affichage
+  screen.RefreshAll(50);
+
+count--;
+  }
+}
+
 void setup() {
   ParseFonte(fonte, FONTE_TY, FONTE_TX, FONTE_NB_CHAR);
 
@@ -190,8 +208,9 @@ void setup() {
 }
 
 void loop() {
-
+  SeqTest(100);
   SeqMessage(FONTE_TX * messageLen2);
+  
   screen.Clear();
 
 }
