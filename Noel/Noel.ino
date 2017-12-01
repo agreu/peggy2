@@ -208,7 +208,7 @@ void setup() {
 }
 
 void loop() {
-  SeqTest(100);
+  //SeqTest(100);
   SeqMessage(FONTE_TX * messageLen2);
   
   screen.Clear();
